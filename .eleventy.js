@@ -43,6 +43,9 @@ module.exports = function (config) {
 	//--- Adds fonts to _site
 	config.addPassthroughCopy({ "src/fonts": "fonts" });
 
+	//--- Add Project images
+	config.addPassthroughCopy({ "src/_content/projects/*/*.png": 'projects/img' });
+
 	config.addShortcode("youtube", (videoURL, title) => {
 		const url = new URL(videoURL);
 		const id = url.searchParams.get("v");
