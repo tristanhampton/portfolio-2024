@@ -1,0 +1,31 @@
+.component--feature-projects {
+  padding: 0 var(--page-margin-500);
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    a {
+      display: block;
+      padding: var(--padding-200);
+      border: 0.2rem solid var(--surface-secondary);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: var(--font-heading);
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: var(--text-primary);
+      }
+    }
+
+    li {
+      margin: 0;
+    }
+
+    li + li a {
+      border-top: none;
+    }
+  }
+}

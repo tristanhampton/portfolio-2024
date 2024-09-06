@@ -15,6 +15,14 @@
   .icon {
     width: 3rem;
     height: 3rem;
+    fill: var(--icon-primary);
+  }
+
+  a:hover,
+  a:focus {
+    svg {
+      fill: var(--icon-invert-primary);
+    }
   }
 }
 
@@ -30,6 +38,9 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
+  margin-top: var(--padding-500);
   gap: var(--padding-200) var(--padding-300);
   padding: var(--padding-200) var(--page-margin-100);
+  font-size: 1.6rem;
 }
