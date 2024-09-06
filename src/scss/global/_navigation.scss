@@ -16,6 +16,7 @@
     font-size: var(--font-small);
     color: var(--text-primary);
     text-decoration: none;
+    text-align: center;
 
     &:hover,
     &:focus {
@@ -30,5 +31,11 @@
 
   li:last-child a {
     border-right-width: 0.2rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    li {
+      flex: 1 1 50%;
+    }
   }
 }
