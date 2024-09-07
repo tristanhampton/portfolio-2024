@@ -57,5 +57,27 @@
   .h6 {
     margin-top: var(--vertical-type-spacing-med);
     font-size: var(--heading-4);
+    color: inherit;
+  }
+
+  &:hover,
+  &:focus,
+  >a:hover,
+  >a:focus {
+    color: var(--text-primary);
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+      text-decoration: underline;
+      color: var(--text-primary);
+    }
   }
 }
