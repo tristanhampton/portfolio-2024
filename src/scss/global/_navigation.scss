@@ -41,5 +41,13 @@
     a {
       border-width: 0.2rem;
     }
+
+    li:nth-child(n+3) a {
+      border-top: none;
+    }
+
+    li:nth-child(2n) a {
+      border-left: none; 
+    }
   }
 }
