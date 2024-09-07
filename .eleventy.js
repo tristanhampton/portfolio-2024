@@ -46,6 +46,10 @@ module.exports = function (config) {
 	//--- Add Project images
 	config.addPassthroughCopy({ "src/_content/projects/*/*.png": 'projects/img' });
 
+	//--- Add Tools JS files
+	config.addPassthroughCopy({ "src/_content/tools/*/*.js": 'tools/js' });
+	config.addPassthroughCopy({ "src/_content/tools/*/*.png": 'tools/img' });
+
 	config.addShortcode("youtube", (videoURL, title) => {
 		const url = new URL(videoURL);
 		const id = url.searchParams.get("v");

@@ -12,7 +12,7 @@ meta_description: "Small tools I've made to make web development a little easier
 <section class="component component--feature-projects">
   <ul class="feature-projects__list">
     {% for tool in collections.tool | reverse %}
-      {% if tool.data.published %}
+      {% if tool.data.permalink != false %}
         <li>
           <a href="{{ tool.url }}">{{ tool.data.title }}</a>
         </li>

@@ -9,12 +9,14 @@ label {
 
 input[type="text"],
 input[type="date"],
+input[type="number"],
 textarea,
 select {
   width: 100%;
   background: transparent;
-  border: var(--border-thickness-100) solid #000;
+  border: var(--input-border);
   padding: 0 var(--padding-100);
+  color: var(--text-primary);
 }
 
 input[type="text"],
@@ -45,10 +47,18 @@ input[type="checkbox"] {
   }
 }
 
+*+form {
+  margin-top: var(--padding-800);
+}
+
+*+.form-item,
+*+[type="submit"] {
+  margin-top: var(--padding-400);
+}
+
+
+
 .form-item {
-  +.form-item {
-    margin-top: var(--padding-400);
-  }
 
   &.form-item--check+.form-item--check {
     margin-top: var(--padding-200);
