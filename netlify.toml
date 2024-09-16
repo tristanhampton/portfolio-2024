@@ -3,6 +3,6 @@ package = "netlify-plugin-cache"
 
   [plugins.inputs]
   paths = [
-    "_dist/img",
+    "_site/img/processed",
     ".cache"
   ]
