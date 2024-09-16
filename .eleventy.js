@@ -17,7 +17,7 @@ module.exports = function (config) {
 	config.setUseGitIgnore(false);
 
 	// We're setting 11ty to build when scss/js is updated, but we want a delay so that the assets have time to build
-	config.setWatchThrottleWaitTime(1000);
+	config.setWatchThrottleWaitTime(120);
 
 	//--- Plugins
 	config.addFilter("dump", dumpFilter);
