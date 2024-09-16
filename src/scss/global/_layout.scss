@@ -51,6 +51,21 @@ picture {
 
 	>* {
 		flex: 1 1 max(250px, calc(33.3333% - var(--padding-200)));
+		max-width: calc(33.333% - var(--padding-200));
+	}
+
+	@media screen and (max-width: 900px) {
+		>* {
+			flex: 1 1 max(250px, calc(50% - var(--padding-200)));
+			max-width: calc(50% - var(--padding-200));
+		}
+	}
+
+	@media screen and (max-width: 525px) {
+		>* {
+			flex: 1 1 100%;
+			max-width: 100%;
+		}
 	}
 }
 

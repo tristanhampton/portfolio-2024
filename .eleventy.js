@@ -40,6 +40,7 @@ module.exports = function (config) {
 	//--- Adds CSS/JS to _site
 	config.addPassthroughCopy({ "_dist/main.css": "css/main.css" });
 	config.addPassthroughCopy({ "_dist/main.js": "js/main.js" });
+	config.addPassthroughCopy({ "_dist/img": "img/processed" });
 
 	//--- Adds Favicons to _site
 	config.addPassthroughCopy({ "src/favicons": "favicons" });
