@@ -1,5 +1,6 @@
 const os = require('os');
 const dumpFilter = require("@jamshop/eleventy-filter-dump");
+const eleventyPluginSharpImages = require("@codestitchofficial/eleventy-plugin-sharp-images");
 
 // https://github.com/markdown-it/markdown-it
 const md = require('markdown-it')({
@@ -21,9 +22,15 @@ module.exports = function (config) {
 	//--- Plugins
 	config.addFilter("dump", dumpFilter);
 
-	config.addFilter("markdown", function(content) {
+	config.addFilter("markdown", function (content) {
 		return md.render(content);
 	});
+	// https://www.npmjs.com/package/@codestitchofficial/eleventy-plugin-sharp-images
+	config.addPlugin(eleventyPluginSharpImages, {
+		urlPath: "/img/processed",
+		outputDir: "_dist/img",
+	});
+
 
 	//--- Misc Options
 	// Additional files to watch for changes
