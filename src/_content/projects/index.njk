@@ -6,14 +6,30 @@ permalink: "/projects/"
 meta_description: "The full list of web projects that I have worked on, along with links to view the real project."
 ---
 <section class="banner style--default">
-  <h1>Projects</h1>
+	<h1>Projects</h1>
 </section>
 
 <section class="component component--standard-wide">
 	<h2 class="type--styled">Projects with Northern</h2>
 	<p class="subheading">January 2024 - Present</p>
 
-	<p>Projects are in the works, but I can't share yet...</p>
+	<ul class="flex-wrapper">
+		{% for project in collections.northern | reverse %}
+			{% if project.data.published != false %}
+				<li>
+					<a class="card" href="{{ project.data.website_url if project.data.redirect else project.url }}" title="{{ project.data.title }}" target="{{ '_blank' if project.data.redirect else '' }}" rel="noopener noreferrer">
+						<h3>{{ project.data.short }}</h3>
+						{% set imgPath = project.page.filePathStem + '.png' %}
+						<picture>
+							<source srcset="{% getUrl imgPath | resize({ height: 300, width: 300, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(max-width: 768px)">
+							<source srcset="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(min-width: 769px)">
+							<img src="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" alt="screenshot of the {{ project.data.title }} website">
+						</picture>
+					</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
 </section>
 
 <section class="component component--standard-wide">
@@ -26,11 +42,11 @@ meta_description: "The full list of web projects that I have worked on, along wi
 					<a class="card" href="{{ project.data.website_url if project.data.redirect else project.url }}" title="{{ project.data.title }}" target="{{ '_blank' if project.data.redirect else '' }}" rel="noopener noreferrer">
 						<h3>{{ project.data.short }}</h3>
 						{% set imgPath = project.page.filePathStem + '.png' %}
-            <picture>
-              <source srcset="{% getUrl imgPath | resize({ height: 300, width: 300, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(max-width: 768px)">
-              <source srcset="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(min-width: 769px)">
-              <img src="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" alt="screenshot of the {{ project.data.title }} website">
-            </picture>
+						<picture>
+							<source srcset="{% getUrl imgPath | resize({ height: 300, width: 300, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(max-width: 768px)">
+							<source srcset="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(min-width: 769px)">
+							<img src="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" alt="screenshot of the {{ project.data.title }} website">
+						</picture>
 					</a>
 				</li>
 			{% endif %}
@@ -49,11 +65,11 @@ meta_description: "The full list of web projects that I have worked on, along wi
 					<a class="card" href="{{ project.data.website_url if project.data.redirect else project.url }}" title="{{ project.data.title }}" target="{{ '_blank' if project.data.redirect else '' }}" rel="noopener noreferrer">
 						<h3>{{ project.data.short }}</h3>
 						{% set imgPath = project.page.filePathStem + '.png' %}
-            <picture>
-              <source srcset="{% getUrl imgPath | resize({ height: 300, width: 300, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(max-width: 768px)">
-              <source srcset="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(min-width: 769px)">
-              <img src="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" alt="screenshot of the {{ project.data.title }} website">
-            </picture>
+						<picture>
+							<source srcset="{% getUrl imgPath | resize({ height: 300, width: 300, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(max-width: 768px)">
+							<source srcset="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" media="(min-width: 769px)">
+							<img src="{% getUrl imgPath | resize({ height: 600, width: 600, position: 'top', fit: 'cover' }) | avif({ quality: 100 }) %}" alt="screenshot of the {{ project.data.title }} website">
+						</picture>
 					</a>
 				</li>
 			{% endif %}
